@@ -1,0 +1,14 @@
+import numpy as np
+
+A = np.matrix([[1,2,3],[0,1,5],[5,6,0]]) # ????? ??????? ??? ?????
+B = A.I # inverse matrix
+print(B)
+
+
+
+
+Explain:
+http://www.learningaboutelectronics.com/Articles/How-to-get-the-inverse-of-a-matrix-in-Python-using-numpy.php
+
+
+https://www.youtube.com/watch?v=pKZyszzmyeQ

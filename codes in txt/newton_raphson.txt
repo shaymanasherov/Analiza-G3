@@ -1,0 +1,26 @@
+import numpy as np
+from sympy import *
+import math
+
+
+def newton_raphson(f, x0, k):
+    """
+    :param f: function.
+    :param x0: start point.
+    :param k: approx Size.
+    :return: Approximately root value.
+    """
+    dfunc = lambdify(x, f.diff(x))
+    func = lambdify(x, f)
+    current_x = x0
+    for i in range(0, k):
+        print(current_x)
+        current_x = current_x - func(current_x) / dfunc(current_x)
+    y = lambdify(x, current_x)
+    return y(x0)
+
+
+e = 2.718281828
+x = Symbol('x')
+y = x * e ** -x - 0.25
+print("{0:.10f}".format(newton_raphson(y, 2, 10)))

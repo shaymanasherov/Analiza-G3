@@ -1,0 +1,24 @@
+import math
+
+def splithalf_method(a, b,func, tol):#function gets a and b is intervals , polynom and tolerance
+    i=0
+    if func(a) * func(b) <= 0:#If it is a continuous function in the interval, we will print an error
+        print("error")
+    middle = a #turn the middle to a value
+    while math.fabs(a-b) >= tol:#turn a-b to absolute number and check if its bigger or equal to tolerance
+        middle = (a + b) / 2
+        if func(middle) == 0:
+            return middle
+        if func(a) * func(middle) < 0:
+            b = middle
+        else:
+            a = middle
+        i+=1
+        print("Operation number:",i,"\n","Middle:",middle)
+    return middle
+
+
+y = lambda x:16*(x**3)-16(x**2)+1 #create polynom function
+print(splithalf_method(-0.226, 0, y, 0.01))
+print(splithalf_method(0.298, 0, y, 0.01))
+print(splithalf_method(0.927, 0, y, 0.01)) 

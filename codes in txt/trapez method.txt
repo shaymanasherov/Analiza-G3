@@ -1,0 +1,13 @@
+http://www.damada.co.il/topics/math/db/integral_approx_approach/integral_approx_approach.shtml
+
+
+def trapezoidal(f, a, b, n):
+    h = float(b - a) / n
+    s = 0.0
+    s += f(a)/2.0
+    for i in range(1, n):
+        s += f(a + i*h)
+    s += f(b)/2.0
+    return s * h
+
+print( trapezoidal(lambda x:-x**2+10*x-16, 2, 8, 6))

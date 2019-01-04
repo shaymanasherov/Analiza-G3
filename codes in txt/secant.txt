@@ -1,0 +1,13 @@
+def secant(f,a,b,n):
+    for i in range(0,n):  # ???? ?????? N ????????
+        if f(a)-f(b) == 0: # ???? ????? ?????
+            return a
+        res = (a - (f(a)*(b-a)*1.0)/(f(b)-f(a)))  # ???? ??? ????????
+        a = b
+        b = res
+        print(b)
+    return b
+
+print(secant(lambda x: 16*x**3 - 16*x**2 + 1, -0.226, 0, 10))
+print(secant(lambda x: 16*x**3 - 16*x**2 + 1, 0.298, 0, 10))
+print(secant(lambda x: 16*x**3 - 16*x**2 + 1, 0.927, 0, 10))
