@@ -66,9 +66,9 @@ maxItera = 3  # Maximum Iterations
 tolMin = 1e-2  # Tolerance
 
 # Para Ax = b
-matriz = [[5, -1, 2],  # A
-          [3 , 8 , -2 , -25],
-          [1 ,1,4,6],]
+matriz = [[5,-1,2],  # A
+          [3 ,8,-2],
+          [1 ,1,4],]
 
 arrResult = [12,-25,6]  # b
 
